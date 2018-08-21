@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ride Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="containerRide">
+    <div class="rideLogo">
+      <img *ngIf="cat==1" src="../../assets/imgs/bicycle-rider.png" alt="">
+      <img *ngIf="cat==2" src="../../assets/imgs/bus-stop.png" alt="">
+      <img *ngIf="cat==3" src="../../assets/imgs/trekking.png" alt="">
+    </div>
+    <div class="rideHeading">
+      <span *ngIf="cat==1">Bike Ride</span>
+      <span *ngIf="cat==2">Bus Ride</span>
+      <span *ngIf="cat==3">Walk</span>
+    </div>
+    <div class="distanceRide list">
+      <div class="left">
+        <span>Distance </span>
+      </div>
+      <div class="right">
+        <span>{{dist}} km</span>
+      </div>
+    </div>
+    <div class="trafficRide list">
+      <div class="left">
+        <span>Traffic </span>
+      </div>
+      <div class="right">
+        <span *ngIf="traffic==1" style="color:green">Low</span>
+        <span *ngIf="traffic==2" style="color:orange">Moderate</span>
+        <span *ngIf="traffic==3" style="color:red">High</span>
+      </div>
+    </div>
+    <div class="busPickupRide list">
+      <div class="left">
+        <span>Total Time </span>
+      </div>
+      <div class="right">
+        <span *ngIf="cat==1">10-12 min</span>
+        <span *ngIf="cat==2">15-17 min</span>
+        <span *ngIf="cat==3">30-40 min</span>
+      </div>
+    </div>
+    <div class="distanceRide busPickup list" *ngIf="cat==2">
+      <div class="left">
+        <span>Pickup Station</span>
+      </div>
+      <div class="right">
+        <span>Dhola Kuan - 5:00 pm</span>
+      </div>
+    </div>
+  </div>
+</ion-content>

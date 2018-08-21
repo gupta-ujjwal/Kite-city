@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle *ngIf="!selectedItem">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ride Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+ <div class="containerTourist">
+    <div class="cards">
+      <div class="cardTourist" (click)=getDetails(2)>
+        <div class="imgHolder">
+          <img src="../../assets/imgs/IIITD-1.jpg" alt="">
+        </div>
+        <div class="title">
+          <span>IIIT Delhi</span>
+        </div>
+        <div class="address">
+          <span>Okhla, Delhi</span>
+        </div>
+      </div>
+      <div class="cardTourist" (click)=getDetails(3)>
+        <div class="imgHolder">
+          <img src="../../assets/imgs/IIITD-2.jpg" alt="">
+        </div>
+        <div class="title">
+          <span>IIIT Delhi</span>
+        </div>
+        <div class="address">
+          <span>Okhla, India</span>
+        </div>
+      </div>
+       <div class="cardTourist" (click)=getDetails(1)>
+        <div class="imgHolder">
+          <img src="../../assets/imgs/taj.jpeg" alt="">
+        </div>
+        <div class="title">
+          <span>Taj Mahal</span>
+        </div>
+        <div class="address">
+          <span>Agra, UP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

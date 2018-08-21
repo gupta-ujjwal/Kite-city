@@ -1,0 +1,68 @@
+
+// .list-ios {
+//     display: none !important;
+// }
+
+// .searchbar-ios {
+//     background: #fff;
+//     margin :5px 0px;    
+// }
+.placeContainer {
+    background: #f1f1f1;
+    padding: 5px;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+}
+.placeContainer input {
+    width: 95%;
+    margin: 10px 10px 6px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #999;
+}
+
+.searchButton {
+    text-align: center;
+}
+.placeContainer button {
+    width: 95%;
+}
+
+.menuPaths ul{
+    list-style: none;
+    padding: 0px 15px;
+}
+
+.menuPaths ul li {
+    border-bottom: 1px solid lightgrey;     
+    height: 70px;
+    cursor: pointer;
+}
+
+.imageLogo {
+    float: left;
+    padding: 5px;
+    width: 70px;
+    height: 70px;
+}
+
+.imageLogo img {
+    width: 100%;
+    height: 100%;
+}
+
+.distance {
+    padding-top: 10px
+}
+
+.distance span{ 
+    padding-left: 20px;
+}
+
+.crowdLevel {
+    padding-top: 10px;
+}
+
+.levelHead {
+    padding-left: 20px;
+}
+

@@ -1,0 +1,37 @@
+page-hello-ionic {
+}
+.ion-content {
+    font-family: Roboto !important  ;
+}
+
+.welcome {
+    position: relative;
+    top: 28%;
+    text-align: center;
+    color: #333;
+}
+
+.welcomeHeadingContainer h3 {
+    font-size: 54px;
+    margin: 20px;
+}
+
+.getStarted {
+    margin: 40px 0px;
+    margin-bottom: 15px;
+}
+
+.getStarted button{
+    background: #0268e4;
+    color: #fff;
+    padding: 15px 45px;
+    border-radius: 5px;
+    font-size: 15px;
+    min-width: 45%;
+}
+
+.getStarted button:hover {
+    background: #fff;
+    border: 1px solid black;
+    color: black;
+}

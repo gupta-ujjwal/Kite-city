@@ -1,0 +1,147 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Kite</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <!-- <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-icon name="{{item.icon}}" item-left></ion-icon>
+      {{item.title}}
+      <div class="item-note" item-right>
+        {{item.note}}
+      </div>
+    </button>
+  </ion-list> -->
+  <!-- <google-places-autocomplete (callback)="detail($event[0])" key="GOOGLE_PLACES_API_KEY"></google-places-autocomplete>
+  <google-places-autocomplete (callback)="detail($event[0])" key="GOOGLE_PLACES_API_KEY"></google-places-autocomplete> -->
+    
+  <div class="placeContainer">
+    <div class="fromPlace">
+      <input [(ngModel)]="source" type="text" placeholder="From ">
+    </div>
+    <div class="toPlace">
+      <input type="text" [(ngModel)]="dest" placeholder="To ">
+    </div>
+    <div class="searchButton">
+      <button ion-button (click)=displayRoutes()><ion-icon style="margin-right: 10px" ios="ios-search-outline" md="md-search"></ion-icon> Find Routes</button>
+    </div>
+  </div>
+
+  <div padding class="DistanceForms" [ngStyle]="myStyles">
+    <ion-segment [(ngModel)]="mode">
+      <ion-segment-button value="Car">
+        Bike
+      </ion-segment-button>
+      <ion-segment-button value="Bus">
+        Bus
+      </ion-segment-button>
+      <ion-segment-button value="Walk">
+        Walk
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div class="menuPaths DistanceForms" [ngStyle]="myStyles" [ngSwitch]="mode">
+    <ul *ngSwitchCase="'Car'">
+      <li (click)=getDetails($event,1,3,3)>
+        <div item-start class="imageLogo">
+          <img src="../../assets/imgs/bicycle-rider.png">
+        </div>
+        <div class="distance">
+          <span>3 km</span>
+        </div>
+        <div class="crowdLevel">
+          <span class="levelHead">Crowd Level : </span>
+          <span class="level" style="color: red">High</span>
+        </div>
+      </li>
+      <li (click)=getDetails($event,1,5,1)>
+        <div item-start class="imageLogo">
+          <img src="../../assets/imgs/bicycle-rider.png">
+        </div>
+        <div class="distance">
+          <span>5 km</span>
+        </div>
+        <div class="crowdLevel">
+          <span class="levelHead">Crowd Level : </span>
+          <span class="level" style="color: green">Low</span>
+        </div>
+      </li>
+      
+    </ul>
+    
+  
+    <div class="menuPaths" [ngSwitch]="mode">
+      <ul *ngSwitchCase="'Bus'">
+        <li (click)=getDetails($event,2,4.5,2)>
+          <div item-start class="imageLogo">
+            <img src="../../assets/imgs/bus-stop.png">
+          </div>
+          <div class="distance">
+            <span>4.5 km</span>
+          </div>
+          <div class="crowdLevel">
+            <span class="levelHead">Crowd Level : </span>
+            <span class="level" style="color: orange">Moderate</span>
+          </div>
+        </li>
+        <li (click)=getDetails($event,2,5,1)>
+          <div item-start class="imageLogo">
+            <img src="../../assets/imgs/bus-stop.png">
+          </div>
+          <div class="distance">
+            <span>5 km</span>
+          </div>
+          <div class="crowdLevel">
+            <span class="levelHead">Crowd Level : </span>
+            <span class="level" style="color: green">Low</span>
+          </div>
+        </li>
+        <li (click)=getDetails($event,2,5.5,3)>
+          <div item-start class="imageLogo">
+            <img src="../../assets/imgs/bus-stop.png">
+          </div>
+          <div class="distance">
+            <span>5.5 km</span>
+          </div>
+          <div class="crowdLevel">
+            <span class="levelHead">Crowd Level : </span>
+            <span class="level" style="color: red">High</span>
+          </div>
+        </li>
+      </ul>
+      
+
+    <div class="menuPaths" [ngSwitch]="mode">
+    <ul *ngSwitchCase="'Walk'">
+      <li (click)=getDetails($event,3,2.3,3)>
+        <div item-start class="imageLogo">
+          <img src="../../assets/imgs/trekking.png">
+        </div>
+        <div class="distance">
+          <span>2.3 km</span>
+        </div>
+        <div class="crowdLevel">
+          <span class="levelHead">Crowd Level : </span>
+          <span class="level" style="color: red">High</span>
+        </div>
+      </li>
+      <li (click)=getDetails($event,3,3,1)>
+        <div item-start class="imageLogo">
+          <img src="../../assets/imgs/trekking.png">
+        </div>
+        <div class="distance">
+          <span>3 km</span>
+        </div>
+        <div class="crowdLevel">
+          <span class="levelHead">Crowd Level : </span>
+          <span class="level" style="color: green">Low</span>
+        </div>
+      </li>
+    </ul>
+    
